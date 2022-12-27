@@ -258,7 +258,7 @@ Function Build_Extension_Status
 # CONNECT TO AZURE
 ####################################################
 
-# Below is just a sample connect for demonstration purpose. In real life you would use modern authentication using e.g. Azure app and certificates
+# Below is just a sample connect for demonstration purpose. Typically, I use modern authentication using e.g. Azure app and certificates
 Connect-AzAccount
 
 
@@ -277,10 +277,15 @@ $global:Exclude_Resource_Contains                               = @()
 $global:Exclude_Resource_Startswith                             = @("PCTXRDS","RCTXRDS")
 $global:Exclude_Resource_Endswith                               = @()
 
+
 ###################################
 # Variables (custom script)
 ###################################
 
+<#
+    For demonstration purpose information, access key is provided in script, but please remember to store in Keyvault for production
+    Storage account name + Storage Access key will be encrypted by Azure, when custom script is run on the VMs
+#>
 # Script Repository
 $global:CustomScript_StorageAcctName                            = "xxxxx"
 $global:CustomScript_StorageKey                                 = "xxxxxxx"
@@ -298,6 +303,20 @@ $global:CustomScript_Cmd                                        = "powershell -E
 
 # Storage account (protected settings, encrypted during deployment)
 $ProtectedSettings = @{"storageAccountName" = $global:CustomScript_StorageAcctName; "storageAccountKey" = $global:CustomScript_StorageKey; "commandToExecute" = $global:CustomScript_Cmd };
+
+
+######################################################################################
+# Scope
+######################################################################################
+
+# Enum all subscriptions
+    AZ_Find_Subscriptions_in_Tenant
+
+# Collection of information about hybrid computers in Azure (Azure Arc enabled)
+    AZ_Find_All_Hybrid_VM_Resources    # $global:HybridVMsInScope_All
+
+# Collection of information about native VM in Azure
+    AZ_Find_All_Native_VM_Resources    # $Global:NativeVMsInScope_All
 
 
 ######################################################################
