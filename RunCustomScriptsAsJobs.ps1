@@ -12,7 +12,6 @@
     
     .LICENSE
     Licensed under the MIT license.
-    Please credit me if you fint this script useful and do some cool things with it.
 
     .WARRANTY
     Use at your own risk, no warranty given!
