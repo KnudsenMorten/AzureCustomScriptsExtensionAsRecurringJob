@@ -1,8 +1,7 @@
 ﻿#Requires -Version 5.0
 <#
     .SYNOPSIS
-    This script will export existing Data Collection Rules (DCR) from existing DCR in Azure Monitor
-    This script will also update / upload file with changes (TransformKql added)
+    This script will run Azure Custom Scripts on both Azure Arc machine and Azure native VMs
 
     .NOTES
     VERSION: 2212
@@ -274,7 +273,7 @@ $global:Exclude_Subscriptions                                   = @("xxxxxxxxxxx
 $global:Exclude_ResourceGroups                                  = @()
 $global:Exclude_Resource                                        = @()
 $global:Exclude_Resource_Contains                               = @()
-$global:Exclude_Resource_Startswith                             = @("PCTXRDS","RCTXRDS")
+$global:Exclude_Resource_Startswith                             = @("DCTX","PCTX")
 $global:Exclude_Resource_Endswith                               = @()
 
 
@@ -294,7 +293,7 @@ $global:CustomScript_StorageContainer                           = "azcustomscrip
 $global:CustomScript_RunScriptName                              = "Automation.CustomScripts"
 $global:CustomScript_SourcePathRepo                             = "\\xxxxx\scripts\AzCustomScriptsExtensionRepo"
 
-# Custom Script: ServerInspector
+# Custom Script: ServerInspector (inventory script I have built)
 $global:CustomScript_ServerInspector_ScriptFileName             = "ServerInspector.ps1"
 
 # Automation

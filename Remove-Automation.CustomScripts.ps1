@@ -1,6 +1,7 @@
 ﻿#Requires -Version 5.0
 <#
     .SYNOPSIS
+    Remove failed Azure Custom Scripts
     In case your custom script fails on a server, it should automatically go into a failed state.
     Then you are able to remove the extension by using Remove-AzConnectedMachineExtension (Azure Arc) or Remove-AzVMExtension (native VM)
     (you can see an example of this at the last section of this script)
