@@ -398,7 +398,7 @@ Connect-AzAccount
 ###################################
 
 # Scope (MG) | You can define the scope for the targetting, supporting management groups or tenant root id (all subs)
-$Global:ManagementGroupScope                                    = "f0fa27a0-8e7c-4f63-9a77-ec94786b7c9e" # can mg e.g. mg-company or AAD Id (=Tenant Root Id)
+$Global:ManagementGroupScope                                    = "xxxxx" # can mg e.g. mg-company or AAD Id (=Tenant Root Id)
 
 # Exclude list | You can exclude certain subs, resource groups, resources, if you don't want to have them as part of the scope
 $global:Exclude_Subscriptions                                   = @("xxxxxxxxxxxxxxxxxxxxxx") # for example platform-connectivity
@@ -413,12 +413,12 @@ $global:Exclude_Resource_Endswith                               = @()
 ###################################
 
 # Script Repository
-$global:CustomScript_StorageAcctName                            = "stlldkautmscriptsrepo"
-$global:CustomScript_StorageKey                                 = "VAfPraB3+IYDRk0KbKPlxiYD5eICERsxmA5l6Hil4/FO3WnpHzwI39cvTxcuINmkEUVX/jifYwVR+AStVJaD9A=="
-$global:CustomScript_StorageConnectString                       = "DefaultEndpointsProtocol=https;AccountName=stlldkautmscriptsrepo;AccountKey=VAfPraB3+IYDRk0KbKPlxiYD5eICERsxmA5l6Hil4/FO3WnpHzwI39cvTxcuINmkEUVX/jifYwVR+AStVJaD9A==;EndpointSuffix=core.windows.net"
+$global:CustomScript_StorageAcctName                            = "xxxxx"
+$global:CustomScript_StorageKey                                 = "xxxxxxx"
+$global:CustomScript_StorageConnectString                       = "DefaultEndpointsProtocol=https;AccountName=xxxxxx;AccountKey=xxxxxx;EndpointSuffix=core.windows.net"
 $global:CustomScript_StorageContainer                           = "azcustomscriptsextension"
 $global:CustomScript_RunScriptName                              = "Automation.CustomScripts"
-$global:CustomScript_SourcePathRepo                             = "\\azwe-s-autm-p01\scripts\AzCustomScriptsExtensionRepo"
+$global:CustomScript_SourcePathRepo                             = "\\xxxxx\scripts\AzCustomScriptsExtensionRepo"
 
 # Custom Script: ServerInspector
 $global:CustomScript_ServerInspector_ScriptFileName             = "ServerInspector.ps1"
